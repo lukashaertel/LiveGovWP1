@@ -1,0 +1,28 @@
+#raw
+	map(data="data.geo")
+		#map
+
+	//- brush(selection="data.selection")
+	//- 	h2 Brush
+	//- 		small(ng-bind="selection", style="padding-left: 2em;")
+	//- 	#brush
+
+	h1
+		small(style="padding-left: 2em;") {{ data.selection }}
+
+	chart(data="data.gra", brush="$root.trip.brush", domain="data.domain", sensor="'gra'")
+		h2 Gravity
+			small(style="padding-left: 2em;") {{ data.gra.length }}
+		#chart.gra
+
+	chart(data="data.acc", brush="$root.trip.brush", domain="data.domain", sensor="'acc'")
+		h2 Accelerometer
+			small(style="padding-left: 2em;") {{ data.acc.length }}
+		#chart.acc
+
+	chart(data="data.lac", brush="$root.trip.brush", domain="data.domain", sensor="'lac'")
+		h2 Linear Acceleration
+			small(style="padding-left: 2em;") {{ data.lac.length }}
+		#chart.lac
+
+// ex:ft=jade
