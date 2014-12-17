@@ -1,4 +1,4 @@
-package eu.liveandgov.wp1.sensor_collector.components;
+package eu.liveandgov.wp1.sensor_collector.components.sources;
 
 import android.os.Bundle;
 
@@ -6,6 +6,8 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 import eu.liveandgov.wp1.data.impl.Tag;
+import eu.liveandgov.wp1.sensor_collector.components.Credentials;
+import eu.liveandgov.wp1.sensor_collector.components.ItemBuffer;
 import eu.liveandgov.wp1.sensor_collector.os.Reporter;
 import eu.liveandgov.wp1.sensor_collector.os.SampleSource;
 

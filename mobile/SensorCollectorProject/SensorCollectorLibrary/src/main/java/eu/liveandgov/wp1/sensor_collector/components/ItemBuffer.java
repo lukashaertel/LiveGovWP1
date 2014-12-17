@@ -1,5 +1,7 @@
 package eu.liveandgov.wp1.sensor_collector.components;
 
+import com.google.inject.ImplementedBy;
+
 import eu.liveandgov.wp1.data.Item;
 import eu.liveandgov.wp1.sensor_collector.os.Reporter;
 
@@ -7,6 +9,7 @@ import eu.liveandgov.wp1.sensor_collector.os.Reporter;
  * <p>The item buffer is the central element maintained by the operating system to accept new items.</p>
  * Created by lukashaertel on 17.11.2014.
  */
+@ImplementedBy(LinkedItemBuffer.class)
 public interface ItemBuffer extends Reporter {
     /**
      * Offers an item to the item buffer, may discard older entries

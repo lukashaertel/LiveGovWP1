@@ -1,5 +1,7 @@
 package eu.liveandgov.wp1.sensor_collector.rec;
 
+import com.google.inject.ImplementedBy;
+
 import java.util.List;
 
 import eu.liveandgov.wp1.sensor_collector.api.RecorderConfig;
@@ -11,6 +13,7 @@ import eu.liveandgov.wp1.sensor_collector.os.SampleTarget;
  * <p>The recorder should be a silent sample target</p>
  * Created by lukashaertel on 30.11.2014.
  */
+@ImplementedBy(BasicRecorder.class)
 public interface Recorder extends Reporter, SampleTarget {
     /**
      * Registers a sample recorder

@@ -1,4 +1,4 @@
-package eu.liveandgov.wp1.sensor_collector.components;
+package eu.liveandgov.wp1.sensor_collector.components.sources;
 
 import android.os.Bundle;
 import android.telephony.NeighboringCellInfo;
@@ -20,6 +20,8 @@ import java.util.concurrent.TimeUnit;
 
 import eu.liveandgov.wp1.data.impl.GSM;
 import eu.liveandgov.wp1.sensor_collector.api.MoraConfig;
+import eu.liveandgov.wp1.sensor_collector.components.Credentials;
+import eu.liveandgov.wp1.sensor_collector.components.ItemBuffer;
 import eu.liveandgov.wp1.sensor_collector.config.Configurator;
 import eu.liveandgov.wp1.sensor_collector.logging.LogPrincipal;
 import eu.liveandgov.wp1.sensor_collector.util.MoraConstants;

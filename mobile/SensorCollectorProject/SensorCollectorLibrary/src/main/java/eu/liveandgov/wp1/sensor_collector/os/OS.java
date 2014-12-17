@@ -3,12 +3,15 @@ package eu.liveandgov.wp1.sensor_collector.os;
 
 import android.os.Bundle;
 
+import com.google.inject.ImplementedBy;
+
 import java.util.List;
 
 /**
  * <p>Operating system</p>
  * Created by lukashaertel on 08.09.2014.
  */
+@ImplementedBy(BasicOS.class)
 public interface OS {
     void startConnector();
 

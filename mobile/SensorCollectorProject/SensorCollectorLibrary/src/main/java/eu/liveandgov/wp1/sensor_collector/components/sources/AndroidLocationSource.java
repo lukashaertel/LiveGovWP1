@@ -1,4 +1,4 @@
-package eu.liveandgov.wp1.sensor_collector.components;
+package eu.liveandgov.wp1.sensor_collector.components.sources;
 
 import android.app.PendingIntent;
 import android.content.Context;
@@ -20,6 +20,8 @@ import java.util.HashMap;
 import eu.liveandgov.wp1.data.impl.GPS;
 import eu.liveandgov.wp1.data.impl.Velocity;
 import eu.liveandgov.wp1.sensor_collector.api.MoraConfig;
+import eu.liveandgov.wp1.sensor_collector.components.Credentials;
+import eu.liveandgov.wp1.sensor_collector.components.ItemBuffer;
 import eu.liveandgov.wp1.sensor_collector.config.Configurator;
 import eu.liveandgov.wp1.sensor_collector.logging.LogPrincipal;
 import eu.liveandgov.wp1.sensor_collector.util.MoraConstants;

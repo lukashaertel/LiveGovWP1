@@ -1,4 +1,4 @@
-package eu.liveandgov.wp1.sensor_collector.components;
+package eu.liveandgov.wp1.sensor_collector.components.sources;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -23,6 +23,8 @@ import eu.liveandgov.wp1.data.impl.MagneticField;
 import eu.liveandgov.wp1.data.impl.Motion;
 import eu.liveandgov.wp1.data.impl.Rotation;
 import eu.liveandgov.wp1.sensor_collector.api.MoraConfig;
+import eu.liveandgov.wp1.sensor_collector.components.Credentials;
+import eu.liveandgov.wp1.sensor_collector.components.ItemBuffer;
 import eu.liveandgov.wp1.sensor_collector.config.Configurator;
 import eu.liveandgov.wp1.sensor_collector.logging.LogPrincipal;
 import eu.liveandgov.wp1.sensor_collector.util.Threaded;
@@ -44,14 +46,14 @@ public abstract class SensorSource extends RegularSampleSource {
      * Correction value for sensor timestamps
      */
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.motionSensorCorrection")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.motionSensorCorrection")
     long motionSensorCorrection;
 
     /**
      * Percentage of delay to drop below
      */
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.dropRate")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.dropRate")
     double dropRate;
 
     /**

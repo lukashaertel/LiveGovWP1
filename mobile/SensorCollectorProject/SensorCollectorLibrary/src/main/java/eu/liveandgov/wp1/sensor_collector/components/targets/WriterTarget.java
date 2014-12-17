@@ -1,4 +1,4 @@
-package eu.liveandgov.wp1.sensor_collector.components;
+package eu.liveandgov.wp1.sensor_collector.components.targets;
 
 import android.os.Bundle;
 

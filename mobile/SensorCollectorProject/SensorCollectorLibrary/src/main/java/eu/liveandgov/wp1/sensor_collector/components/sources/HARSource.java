@@ -1,4 +1,4 @@
-package eu.liveandgov.wp1.sensor_collector.components;
+package eu.liveandgov.wp1.sensor_collector.components.sources;
 
 import android.os.Bundle;
 
@@ -13,6 +13,8 @@ import eu.liveandgov.wp1.data.impl.Acceleration;
 import eu.liveandgov.wp1.data.impl.Activity;
 import eu.liveandgov.wp1.pipeline.Consumer;
 import eu.liveandgov.wp1.sensor_collector.api.MoraConfig;
+import eu.liveandgov.wp1.sensor_collector.components.Credentials;
+import eu.liveandgov.wp1.sensor_collector.components.ItemBuffer;
 import eu.liveandgov.wp1.sensor_collector.config.Configurator;
 import eu.liveandgov.wp1.sensor_collector.os.OS;
 import eu.liveandgov.wp1.sensor_collector.os.SampleTarget;
@@ -48,7 +50,7 @@ public class HARSource extends RegularSampleSource {
     ItemBuffer itemBuffer;
 
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.harWindowLength")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.harWindowLength")
     int windowLength;
 
     private HARPipeline harPipeline;

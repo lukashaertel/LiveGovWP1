@@ -1,4 +1,4 @@
-package eu.liveandgov.wp1.sensor_collector.components;
+package eu.liveandgov.wp1.sensor_collector.components.sources;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -35,27 +35,27 @@ public class NotifierSource implements SampleSource {
     NotificationManager notificationManager;
 
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.notifierTitle")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierTitle")
     String notifierTitle;
 
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.notifierText")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierText")
     String notifierText;
 
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.notifierColor")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierColor")
     int notifierColor;
 
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.notifierIcon")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierIcon")
     int notifierIcon;
 
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.notifierOnMs")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierOnMs")
     int notifierOnMs;
 
     @Inject
-    @Named("eu.liveandgov.wp1.sensor_collector.components.notifierOffMs")
+    @Named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierOffMs")
     int notifierOffMs;
 
     private final int notifierId;

@@ -45,8 +45,6 @@ public class MoraModule extends AbstractModule {
         configureBasics();
         configureConfigManager();
         configureFS();
-        configureOS();
-        configureRecorder();
         configureStrategies();
         configureConnectors();
         configureComponents();
@@ -145,32 +143,6 @@ public class MoraModule extends AbstractModule {
         bindConstant()
                 .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.fs.compressed"))
                 .to(true);
-
-        bind(FS.class)
-                .to(FolderFS.class);
-    }
-
-    /**
-     * <p>
-     * The operating system maintains activation and deactivation of sample source as well as
-     * report generation and item distribution
-     * </p>
-     */
-    private void configureOS() {
-        // Configure OS
-        bind(OS.class)
-                .to(BasicOS.class);
-    }
-
-    /**
-     * <p>
-     * The recorder generates sample bits for clients
-     * </p>
-     */
-    private void configureRecorder() {
-        // Configure recorder
-        bind(Recorder.class)
-                .to(BasicRecorder.class);
     }
 
     /**
@@ -203,8 +175,6 @@ public class MoraModule extends AbstractModule {
         bindConstant()
                 .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.itemBufferTimeoutUnit"))
                 .to(TimeUnit.SECONDS);
-        bind(ItemBuffer.class)
-                .to(LinkedItemBuffer.class);
     }
 
     /**
@@ -225,27 +195,27 @@ public class MoraModule extends AbstractModule {
      */
     private void configureNotifierLoopBack() {
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.notifierTitle"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierTitle"))
                 .to("MORA Collector");
 
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.notifierText"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierText"))
                 .to("Reading sensor values");
 
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.notifierColor"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierColor"))
                 .to(Color.RED);
 
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.notifierIcon"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierIcon"))
                 .to(R.drawable.ic_launcher);
 
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.notifierOnMs"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierOnMs"))
                 .to(900);
 
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.notifierOffMs"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.notifierOffMs"))
                 .to(900);
     }
 
@@ -260,15 +230,15 @@ public class MoraModule extends AbstractModule {
                 : 0;
 
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.dropRate"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.dropRate"))
                 .to(.90);
 
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.motionSensorCorrection"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.motionSensorCorrection"))
                 .to(motionSensorCorrection);
 
         bindConstant()
-                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.harWindowLength"))
+                .annotatedWith(Names.named("eu.liveandgov.wp1.sensor_collector.components.sources.harWindowLength"))
                 .to(1000);
     }
 

@@ -1,4 +1,4 @@
-package eu.liveandgov.wp1.sensor_collector.components;
+package eu.liveandgov.wp1.sensor_collector.components.sources;
 
 import android.content.Context;
 import android.location.LocationManager;
@@ -11,6 +11,8 @@ import com.google.inject.Singleton;
 
 import org.apache.log4j.Logger;
 
+import eu.liveandgov.wp1.sensor_collector.components.Credentials;
+import eu.liveandgov.wp1.sensor_collector.components.ItemBuffer;
 import eu.liveandgov.wp1.sensor_collector.config.Configurator;
 import eu.liveandgov.wp1.sensor_collector.logging.LogPrincipal;
 import eu.liveandgov.wp1.sensor_collector.util.MoraConstants;
@@ -59,6 +61,7 @@ public class LocationSourceProvider implements Provider<LocationSource> {
      */
     @Override
     public LocationSource get() {
+        // TODO is this really necessary
         if (value != null)
             return value;
 

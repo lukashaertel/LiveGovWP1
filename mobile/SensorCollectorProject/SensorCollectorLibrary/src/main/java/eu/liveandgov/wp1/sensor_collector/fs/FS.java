@@ -1,6 +1,7 @@
 package eu.liveandgov.wp1.sensor_collector.fs;
 
 import com.google.common.io.CharSink;
+import com.google.inject.ImplementedBy;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import eu.liveandgov.wp1.sensor_collector.api.Trip;
  * <p>File System</p>
  * Created by lukashaertel on 30.09.2014.
  */
+@ImplementedBy(FolderFS.class)
 public interface FS {
     /**
      * <p>Lists all the currently stored trips</p>
